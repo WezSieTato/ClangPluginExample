@@ -276,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -e \"${CONFIGURATION_BUILD_DIR}/../${CONFIGURATION}/libPrintFunctionNames.dylib\" ]; then\n    # I wish I could specify dependencies between targets from different projects within workspace\n    echo \"error: Please build scheme PrintFunctionNames before building current scheme.\" 1>&2\nfi\n\nxcodebuild -scheme SampleProject -configuration ${CONFIGURATION} -destination \"platform=iOS Simulator,name=iPhone Retina (3.5-inch)\" ${ACTION} OTHER_CFLAGS=\"-Xclang -load -Xclang ${CONFIGURATION_BUILD_DIR}/../${CONFIGURATION}/libPrintFunctionNames.dylib -Xclang -plugin -Xclang print-fns -fsyntax-only\"";
+			shellScript = "if [ ! -e \"${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib\" ]; then\n    # I wish I could specify dependencies between targets from different projects within workspace\necho \"siema ${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib\"\n    echo \"error: Please build scheme PrintFunctionNames before building current scheme.\" 1>&2\nfi\n\nxcodebuild -scheme SampleProject -configuration ${CONFIGURATION} -destination \"platform=iOS Simulator,name=iPhone XR\" ${ACTION} OTHER_CFLAGS=\"-Xclang -load -Xclang ${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib -Xclang -plugin -Xclang print-fns -fsyntax-only\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -371,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -404,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -418,6 +418,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleProject/SampleProject-Prefix.pch";
 				INFOPLIST_FILE = "SampleProject/SampleProject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -431,6 +432,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SampleProject/SampleProject-Prefix.pch";
 				INFOPLIST_FILE = "SampleProject/SampleProject-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};

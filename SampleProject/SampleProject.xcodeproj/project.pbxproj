@@ -276,7 +276,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [ ! -e \"${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib\" ]; then\n    # I wish I could specify dependencies between targets from different projects within workspace\necho \"siema ${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib\"\n    echo \"error: Please build scheme PrintFunctionNames before building current scheme.\" 1>&2\nfi\n\nxcodebuild -scheme SampleProject -configuration ${CONFIGURATION} -destination \"platform=iOS Simulator,name=iPhone XR\" ${ACTION} OTHER_CFLAGS=\"-Xclang -load -Xclang ${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib -Xclang -plugin -Xclang print-fns -fsyntax-only\"\n";
+			shellScript = "if [ ! -e \"${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib\" ]; then\n    # I wish I could specify dependencies between targets from different projects within workspace\n    echo \"error: Please build scheme PrintFunctionNames before building current scheme.\" 1>&2\nfi\n\nxcodebuild -scheme SampleProject -configuration ${CONFIGURATION} -destination \"platform=iOS Simulator,name=iPhone XR\" ${ACTION} OTHER_CFLAGS=\"-Xclang -load -Xclang ${BUILD_ROOT}/${CONFIGURATION}/libPrintFunctionNames.dylib -Xclang -plugin -Xclang print-fns -fsyntax-only\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -513,6 +513,7 @@
 				F79AA89618536E0200C51467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F79AA89718536E0200C51467 /* Build configuration list for PBXNativeTarget "SampleProjectTests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +522,7 @@
 				F79AA89918536E0200C51467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F79AA8B01853777300C51467 /* Build configuration list for PBXAggregateTarget "SampleProject with plugin" */ = {
 			isa = XCConfigurationList;
@@ -529,6 +531,7 @@
 				F79AA8B21853777300C51467 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

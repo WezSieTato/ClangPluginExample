@@ -16,7 +16,6 @@
 #include "clang/AST/AST.h"
 #include "clang/AST/ASTConsumer.h"
 #include "clang/Frontend/CompilerInstance.h"
-#include "llvm/Support/raw_ostream.h"
 #include <memory>
 
 using namespace clang;

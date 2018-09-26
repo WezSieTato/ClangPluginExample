@@ -23,7 +23,7 @@
 
 /* Begin PBXBuildFile section */
 		BDFC03D7215B96C40018C835 /* ToyClangPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03D6215B96C40018C835 /* ToyClangPlugin.cpp */; };
-		BDFC03DD215B9ADF0018C835 /* ToyObjectTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03DC215B9ADF0018C835 /* ToyObjectTests.m */; };
+		BDFC03EF215BD1360018C835 /* ObjcSuperInitPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03EE215BD1360018C835 /* ObjcSuperInitPlugin.cpp */; };
 		F79AA843185352B700C51467 /* PrintFunctionNames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F79AA842185352B700C51467 /* PrintFunctionNames.cpp */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +40,7 @@
 /* Begin PBXFileReference section */
 		BDFC03D6215B96C40018C835 /* ToyClangPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ToyClangPlugin.cpp; path = PrintFunctionNames/ToyClangPlugin.cpp; sourceTree = "<group>"; };
 		BDFC03DC215B9ADF0018C835 /* ToyObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToyObjectTests.m; path = Tests/ToyObjectTests.m; sourceTree = "<group>"; };
+		BDFC03EE215BD1360018C835 /* ObjcSuperInitPlugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjcSuperInitPlugin.cpp; sourceTree = "<group>"; };
 		F79AA83A1853525F00C51467 /* libPrintFunctionNames.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPrintFunctionNames.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79AA841185352B700C51467 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = PrintFunctionNames/Config.xcconfig; sourceTree = "<group>"; };
 		F79AA842185352B700C51467 /* PrintFunctionNames.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PrintFunctionNames.cpp; path = PrintFunctionNames/PrintFunctionNames.cpp; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 			isa = PBXGroup;
 			children = (
 				BDFC03D6215B96C40018C835 /* ToyClangPlugin.cpp */,
+				BDFC03EE215BD1360018C835 /* ObjcSuperInitPlugin.cpp */,
 				F79AA841185352B700C51467 /* Config.xcconfig */,
 				F79AA842185352B700C51467 /* PrintFunctionNames.cpp */,
 			);
@@ -198,8 +200,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F79AA843185352B700C51467 /* PrintFunctionNames.cpp in Sources */,
+				BDFC03EF215BD1360018C835 /* ObjcSuperInitPlugin.cpp in Sources */,
 				BDFC03D7215B96C40018C835 /* ToyClangPlugin.cpp in Sources */,
-				BDFC03DD215B9ADF0018C835 /* ToyObjectTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,6 +289,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"${linker_options}",
@@ -304,6 +307,7 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				EXECUTABLE_PREFIX = lib;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				OTHER_LDFLAGS = (
 					"${linker_options}",

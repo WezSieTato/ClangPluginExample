@@ -10,6 +10,23 @@
 
 #import "DetailViewController.h"
 
+@interface ToyObject : NSObject
+
+@end
+
+@implementation ToyObject
+
+@end
+
+@interface bad_ToyObject : NSObject
+
+@end
+
+@implementation bad_ToyObject
+
+@end
+
+
 @interface MasterViewController () {
     NSMutableArray *_objects;
 }

@@ -10,7 +10,15 @@ namespace {
 
     class ObjcSuperInitVisitor : public RecursiveASTVisitor<ObjcSuperInitVisitor>
     {
+    private:
+        ASTContext *context;
+
     public:
+        void setContext(ASTContext &context)
+        {
+            this->context = &context;
+        }
+
         bool VisitObjCMethodDecl(ObjCMethodDecl *declaration)
         {
             if (!isInitImplementation(declaration)) {
@@ -19,6 +27,9 @@ namespace {
             printf("Method: [%s %s]\n", declaration->getClassInterface()->getNameAsString().c_str(), declaration->getNameAsString().c_str());
             bool callInit = containsInit(declaration->getCompoundBody());
             printf("Contains init: %d\n", callInit);
+            if (!callInit) {
+                reportMissingInit(declaration);
+            }
 
             return true;
         }
@@ -59,12 +70,20 @@ namespace {
             return false;
         }
 
+        void reportMissingInit(ObjCMethodDecl *objcDecl) {
+            DiagnosticsEngine &diagEngine = context->getDiagnostics();
+            unsigned diagID = diagEngine.getCustomDiagID(DiagnosticsEngine::Error, "Missing init call");
+            SourceLocation location = objcDecl->getCompoundBody()->getLocStart();
+            diagEngine.Report(location, diagID);
+
+        }
     };
 
     class ObjcSuperInitConsumer : public ASTConsumer
     {
     public:
         void HandleTranslationUnit(ASTContext &context) {
+            visitor.setContext(context);
             visitor.TraverseDecl(context.getTranslationUnitDecl());
         }
     private:

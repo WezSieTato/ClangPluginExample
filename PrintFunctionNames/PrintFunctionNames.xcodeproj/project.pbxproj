@@ -23,7 +23,8 @@
 
 /* Begin PBXBuildFile section */
 		BDFC03D7215B96C40018C835 /* ToyClangPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03D6215B96C40018C835 /* ToyClangPlugin.cpp */; };
-		BDFC03EF215BD1360018C835 /* ObjcSuperInitPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03EE215BD1360018C835 /* ObjcSuperInitPlugin.cpp */; };
+		BDFC03EF215BD1360018C835 /* ObjcSuperInitObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03EE215BD1360018C835 /* ObjcSuperInitObjectTest.m */; };
+		BDFC03F6215CC5E50018C835 /* ObjcSuperInitPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03F5215CC5E50018C835 /* ObjcSuperInitPlugin.cpp */; };
 		F79AA843185352B700C51467 /* PrintFunctionNames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F79AA842185352B700C51467 /* PrintFunctionNames.cpp */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +41,8 @@
 /* Begin PBXFileReference section */
 		BDFC03D6215B96C40018C835 /* ToyClangPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ToyClangPlugin.cpp; path = PrintFunctionNames/ToyClangPlugin.cpp; sourceTree = "<group>"; };
 		BDFC03DC215B9ADF0018C835 /* ToyObjectTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ToyObjectTests.m; path = Tests/ToyObjectTests.m; sourceTree = "<group>"; };
-		BDFC03EE215BD1360018C835 /* ObjcSuperInitPlugin.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ObjcSuperInitPlugin.cpp; sourceTree = "<group>"; };
+		BDFC03EE215BD1360018C835 /* ObjcSuperInitObjectTest.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = ObjcSuperInitObjectTest.m; path = Tests/ObjcSuperInitObjectTest.m; sourceTree = "<group>"; };
+		BDFC03F5215CC5E50018C835 /* ObjcSuperInitPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ObjcSuperInitPlugin.cpp; path = PrintFunctionNames/ObjcSuperInitPlugin.cpp; sourceTree = "<group>"; };
 		F79AA83A1853525F00C51467 /* libPrintFunctionNames.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = libPrintFunctionNames.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79AA841185352B700C51467 /* Config.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Config.xcconfig; path = PrintFunctionNames/Config.xcconfig; sourceTree = "<group>"; };
 		F79AA842185352B700C51467 /* PrintFunctionNames.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = PrintFunctionNames.cpp; path = PrintFunctionNames/PrintFunctionNames.cpp; sourceTree = "<group>"; };
@@ -81,8 +83,8 @@
 		F79AA844185352BE00C51467 /* PrintFunctionNames */ = {
 			isa = PBXGroup;
 			children = (
+				BDFC03F5215CC5E50018C835 /* ObjcSuperInitPlugin.cpp */,
 				BDFC03D6215B96C40018C835 /* ToyClangPlugin.cpp */,
-				BDFC03EE215BD1360018C835 /* ObjcSuperInitPlugin.cpp */,
 				F79AA841185352B700C51467 /* Config.xcconfig */,
 				F79AA842185352B700C51467 /* PrintFunctionNames.cpp */,
 			);
@@ -100,6 +102,7 @@
 		F79AA84C18535C4E00C51467 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
+				BDFC03EE215BD1360018C835 /* ObjcSuperInitObjectTest.m */,
 				BDFC03DC215B9ADF0018C835 /* ToyObjectTests.m */,
 				F79AA84B18535C4700C51467 /* test.c */,
 				F79AA8551853672A00C51467 /* RunTests.py */,
@@ -199,8 +202,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BDFC03F6215CC5E50018C835 /* ObjcSuperInitPlugin.cpp in Sources */,
 				F79AA843185352B700C51467 /* PrintFunctionNames.cpp in Sources */,
-				BDFC03EF215BD1360018C835 /* ObjcSuperInitPlugin.cpp in Sources */,
+				BDFC03EF215BD1360018C835 /* ObjcSuperInitObjectTest.m in Sources */,
 				BDFC03D7215B96C40018C835 /* ToyClangPlugin.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

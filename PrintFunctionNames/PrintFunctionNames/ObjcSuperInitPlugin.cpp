@@ -25,7 +25,7 @@ namespace {
 
         bool VisitObjCMethodDecl(ObjCMethodDecl *declaration)
         {
-            if (isInitImplementation(declaration)) {
+            if (!isInitImplementation(declaration)) {
                 return true;
             }
             printf("Method: %s\n", declaration->getNameAsString().c_str());

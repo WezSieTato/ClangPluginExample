@@ -23,7 +23,6 @@
 
 /* Begin PBXBuildFile section */
 		BDFC03D7215B96C40018C835 /* ToyClangPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03D6215B96C40018C835 /* ToyClangPlugin.cpp */; };
-		BDFC03EF215BD1360018C835 /* ObjcSuperInitObjectTest.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03EE215BD1360018C835 /* ObjcSuperInitObjectTest.m */; };
 		BDFC03F6215CC5E50018C835 /* ObjcSuperInitPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BDFC03F5215CC5E50018C835 /* ObjcSuperInitPlugin.cpp */; };
 		F79AA843185352B700C51467 /* PrintFunctionNames.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F79AA842185352B700C51467 /* PrintFunctionNames.cpp */; };
 /* End PBXBuildFile section */
@@ -204,7 +203,6 @@
 			files = (
 				BDFC03F6215CC5E50018C835 /* ObjcSuperInitPlugin.cpp in Sources */,
 				F79AA843185352B700C51467 /* PrintFunctionNames.cpp in Sources */,
-				BDFC03EF215BD1360018C835 /* ObjcSuperInitObjectTest.m in Sources */,
 				BDFC03D7215B96C40018C835 /* ToyClangPlugin.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

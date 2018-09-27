@@ -11,25 +11,14 @@ namespace {
     class ObjcSuperInitVisitor : public RecursiveASTVisitor<ObjcSuperInitVisitor>
     {
     public:
-        bool VisitObjCInterfaceDecl(ObjCInterfaceDecl *declaration)
-        {
-            printf("ObjClass: %s\n", declaration->getNameAsString().c_str());
-            return true;
-        }
-
-        bool VisitObjCImplementationDecl(ObjCImplementationDecl *declaration)
-        {
-            printf("Implementation: %s\n", declaration->getNameAsString().c_str());
-            return true;
-        }
-
         bool VisitObjCMethodDecl(ObjCMethodDecl *declaration)
         {
             if (!isInitImplementation(declaration)) {
                 return true;
             }
-            printf("Method: %s\n", declaration->getNameAsString().c_str());
-            printf("Czy pozadany: %d\n", declaration->getCompoundBody() != nullptr);
+            printf("Method: [%s %s]\n", declaration->getClassInterface()->getNameAsString().c_str(), declaration->getNameAsString().c_str());
+            bool callInit = containsInit(declaration->getCompoundBody());
+            printf("Contains init: %d\n", callInit);
 
             return true;
         }
@@ -45,8 +34,29 @@ namespace {
             }
         }
 
+        bool isInit(std::string methodName) {
+            return prefix(methodName, "init");
+        }
+
         bool isInitImplementation(ObjCMethodDecl *declaration) {
-            return prefix(declaration->getNameAsString().c_str(), "init") && declaration->getCompoundBody();
+            return isInit(declaration->getNameAsString()) && declaration->getCompoundBody();
+        }
+
+        bool containsInit(Stmt *statement) {
+            if (statement->getStmtClass() == Stmt::ObjCMessageExprClass) {
+                ObjCMessageExpr *objcExpr = (ObjCMessageExpr *)statement;
+                if (isInit(objcExpr->getSelector().getAsString())) {
+                    return true;
+                }
+            }
+
+            for (auto child : statement->children()) {
+                if (child && containsInit(child)) {
+                    return  true;
+                }
+            }
+
+            return false;
         }
 
     };
@@ -65,7 +75,6 @@ namespace {
     {
     public:
         virtual std::unique_ptr<clang::ASTConsumer> CreateASTConsumer(CompilerInstance &CI, llvm::StringRef) {
-            printf("Tworzymy\n");
             return llvm::make_unique<ObjcSuperInitConsumer>();
         }
 
